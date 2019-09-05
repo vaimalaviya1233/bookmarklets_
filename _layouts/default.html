@@ -56,8 +56,8 @@
             .then(function(response) {
               response.text()
                 .then(function(code) {
-                  document.getElementById('code').innerHtml = code;
-                  document.getElementById('url').href = 'javascript:(function()%7B' + encodeURI(code) + '%7D)()';
+                  document.getElementById('code').innerHTML = code;
+                  document.getElementById('url').href = 'javascript:(function()%7B' + encodeURI(code.replace(/[\r\n]+/gm, '')) + '%7D)()';
                 })
             })
         </script>
