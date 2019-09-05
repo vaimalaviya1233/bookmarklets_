@@ -54,7 +54,9 @@
         <script>
           fetch('https://raw.githubusercontent.com/thomasleplus/bookmarklets/master/javascripts/Amazon/Sort%20by%20number%20of%20reviews.js')
             .then(function(response) {
-              var code = response.text();
+              return response.text();
+            })
+            .then(function(code) {
               document.getElementById('code').innerHtml = code;
               document.getElementById('url').href = 'javascript:(function()%7B' + encodeURI(code) + '%7D)()';
             })
