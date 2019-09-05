@@ -34,17 +34,32 @@
 
     <div class="container">
       <section id="bookmarklets">
-        
+
         <h3>Amazon</h3>
         
-        <h4>Sort by number of ratings</h4>
+        <h4>Sort by number of reviews</h4>
         
         <p>This bookmarklet changes the sort order of your current Amazon.com search to order the results by descending number of user reviews. I find that using this sort in combination with the "Avg. Customer Review" filter greatly improves my searches.</p>
         <blockquote>
           <p>Note: for some reason this sort does not work until you limit your search to a "department" of the Amazon online store.</p>
         </blockquote>
         <p>Here is a link demonstrating the result for USB cables: <a href="https://www.amazon.com/s?k=usb+cable&amp;i=electronics&amp;s=review-count-rank" rel="nofollow">https://www.amazon.com/s?k=usb+cable&amp;i=electronics&amp;s=review-count-rank</a></p>
-        <pre>javascript:(function()%7Balert(%22test!%22)%7D)()</pre>
+        
+        <h5>Code</h5>
+        <pre id="code">return</pre>
+        
+        <h5>Bookmarklet</h5>
+        <p>Drag and drop or bookmark this link: <a href="javascript:(function()%7Breturn%7D)()" id="url">Amazon - Sort by number of reviews</a></p>
+
+        <script>
+          fetch('https://raw.githubusercontent.com/thomasleplus/bookmarklets/master/javascripts/Amazon/Sort%20by%20number%20of%20reviews.js')
+            .then(function(response) {
+              var code = response.text();
+              document.getElementById('code').innerHtml = code;
+              document.getElementById('url').href = 'javascript:(function()%7B' + encodeURI(code) + '%7D)()';
+            })
+          .catch(error => console.error('Error:', error));
+        </script>
         
       </section>
     </div>
