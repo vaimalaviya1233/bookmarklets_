@@ -144,7 +144,7 @@
         console.debug('Found ' + sections.length + ' bookmarklet sections');
         for (var i = 0; i < sections.length; i++) {
           var section = sections[i];
-          var script = section.firstChild.innerHTML;
+          var script = section.firstElementChild.innerHTML;
           console.debug('Loading ' + script);
           fetch('https://raw.githubusercontent.com/{{site.github.repository_nwo}}/master/javascripts/' + encodeURIComponent(script) + '.js')
             .then(function(response) {
@@ -156,6 +156,9 @@
                   anchor.href = 'javascript:(function()%7B' + encodeURIComponent(code.replace(/[\r\n\t]+/gm, ' ').replace(/  +/gm, ' ')) + '%7D)()';
                   anchor.innerHTML = script;
                 });
+            })
+            .catch(function(error) {
+              console.log(error);
             });
         }
       </script>
