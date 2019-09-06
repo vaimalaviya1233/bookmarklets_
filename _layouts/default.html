@@ -140,10 +140,7 @@
       </section>
 
       <script>
-        var sections = document.getElementsByClassName('bookmarklet');
-        console.debug('Found ' + sections.length + ' bookmarklet sections');
-        for (var i = 0; i < sections.length; i++) {
-          var section = sections[i];
+        function fillSection(section) {
           var script = section.firstElementChild.innerHTML;
           console.debug('Loading ' + script);
           fetch('https://raw.githubusercontent.com/{{site.github.repository_nwo}}/master/javascripts/' + encodeURIComponent(script) + '.js')
@@ -160,6 +157,11 @@
             .catch(function(error) {
               console.log(error);
             });
+        }
+        var sections = document.getElementsByClassName('bookmarklet');
+        console.debug('Found ' + sections.length + ' bookmarklet sections');
+        for (var i = 0; i < sections.length; i++) {
+          fillSection(sections[i]);
         }
       </script>
         
