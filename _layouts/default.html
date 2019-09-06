@@ -144,12 +144,14 @@
         for(var i = 0; i < sections.length; i++) {
           var section = sections[i];
           var script = section.firstChild.innerHTML;
+          console.log('Loading ' + script);
           fetch('https://raw.githubusercontent.com/{{site.github.repository_nwo}}/master/javascripts/' + encodeURIComponent(script) + '.js')
             .then(function(response) {
               response.text()
                 .then(function(code) {
+                  console.log('Loaded ' + script);
                   section.getElementsByClassName('code')[0].innerHTML = code;
-                  var anchor = bookmarklet.getElementsByClassName('url')[0];
+                  var anchor = section.getElementsByClassName('url')[0];
                   anchor.href = 'javascript:(function()%7B' + encodeURIComponent(code.replace(/[\r\n\t]+/gm, ' ').replace(/  +/gm, ' ')) + '%7D)()';
                   anchor.innerHTML = script;
                 })
