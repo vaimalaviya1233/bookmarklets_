@@ -158,7 +158,9 @@
               response.text()
                 .then(function(code) {
                   console.debug('Loaded ' + script);
-                  section.getElementsByClassName('code')[0].appendChild(document.createElement('code')).appendChild(document.createTextNode(code));
+                  var block = section.getElementsByClassName('code')[0];l
+                  block.innerHtml = '';
+                  block.appendChild(document.createElement('code')).appendChild(document.createTextNode(code));
                   var anchor = section.getElementsByClassName('url')[0];
                   anchor.href = 'javascript:(function()%7B' + encodeURIComponent(code.replace(/[\r\n\t]+/gm, ' ').replace(/  +/gm, ' ')) + '%7D)()';
                   anchor.innerHTML = script;
