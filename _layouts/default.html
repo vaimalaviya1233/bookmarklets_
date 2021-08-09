@@ -28,7 +28,7 @@
       <section id="bookmarklets">
         
         <section class="bookmarklet">
-          <h3><a name="allow-copy-paste">Allow copy paste</a></h3>
+          <h3><a name="allow-copy-paste" class="name">Allow copy paste</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet reenables copy/paste on an element (typically a text field or text area). To use the bookmarklet, simply click inside the element that you want to select it and then click on the bookmarklet.</p>
           <h4>Bookmarklet</h4>
@@ -40,7 +40,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="allow-right-click">Allow right-click</a></h3>
+          <h3><a name="allow-right-click" class="name">Allow right-click</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet reenables the right-click context menu on a page.</p>
           <h4>Bookmarklet</h4>
@@ -52,7 +52,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="allow-save-password">Allow save password</a></h3>
+          <h3><a name="allow-save-password" class="name">Allow save password</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet reenables the saving of a password by your browser's password manager. To use the bookmarklet, simply click inside the password field that you want to be able to save, then click on the bookmarklet, then enter your password and login. Your browser should then offer to remember the password.</p>
           <blockquote>
@@ -67,7 +67,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="show-password">Show password</a></h3>
+          <h3><a name="show-password" class="name">Show password</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet displays the current value of a masked password field. To use the bookmarklet, simply click inside the password field that you want to be able to save, then click on the bookmarklet.</p>
           <blockquote>
@@ -82,7 +82,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="to-english">To English</a></h3>
+          <h3><a name="to-english" class="name">To English</a></h3>
           <h4>Description</h4>
           <p>Translate the page that you are currently on to English using Google Translate. Of course you can modify this bookmarklet to use any language.</p>
           <h4>Bookmarklet</h4>
@@ -94,7 +94,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="search-site">Search site</a></h3>
+          <h3><a name="search-site" class="name">Search site</a></h3>
           <h4>Description</h4>
           <p>Use this bookmarklet to do a Google search restricted to pages from the domain that you are currently on.</p>
           <h4>Bookmarklet</h4>
@@ -106,7 +106,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="search-internet-archive">Search Internet Archive</a></h3>
+          <h3><a name="search-internet-archive" class="name">Search Internet Archive</a></h3>
           <h4>Description</h4>
           <p>Use this bookmarklet to do a Internet Archive search for old versions of the page that you are currently on.</p>
           <h4>Bookmarklet</h4>
@@ -118,7 +118,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="whois">Whois</a></h3>
+          <h3><a name="whois" class="name">Whois</a></h3>
           <h4>Description</h4>
           <p>Do a whois query on the domain that you are currently visiting using whois.domaintools.com.</p>
           <h4>Bookmarklet</h4>
@@ -130,7 +130,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="ssl-server-test">SSL server test</a></h3>
+          <h3><a name="ssl-server-test" class="name">SSL server test</a></h3>
           <h4>Description</h4>
           <p>Run a SSLLabs SSL audit on the server that you are currently on.</p>
           <h4>Bookmarklet</h4>
@@ -142,7 +142,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="view-source">View source</a></h3>
+          <h3><a name="view-source" class="name">View source</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet opens a new window to display the source code of the current page. This feature is typically not available on mobile web browsers so this bookmarklet is an way to re-implement this feature using JavaScript.</p>
           <h4>Bookmarklet</h4>
@@ -154,7 +154,7 @@
         <hr/>
         
         <section class="bookmarklet">
-          <h3><a name="amazon-sort-by-number-of-reviews">Amazon - Sort by number of reviews</a></h3>
+          <h3><a name="amazon-sort-by-number-of-reviews" class="name">Amazon - Sort by number of reviews</a></h3>
           <h4>Description</h4>
           <p>This bookmarklet changes the sort order of your current Amazon product search to order the results by descending number of user reviews. I find that using this sort in combination with the "Avg. Customer Review" filter greatly improves my searches.</p>
           <blockquote>
@@ -171,7 +171,7 @@
 
       <script>
         function fillSection(section) {
-          var script = section.firstElementChild.innerHTML;
+          var script = section.section.getElementsByClassName('name')[0].innerHTML;
           console.debug('Loading ' + script);
           fetch('https://raw.githubusercontent.com/{{site.github.repository_nwo}}/master/javascripts/' + encodeURIComponent(script) + '.js')
             .then(function(response) {
