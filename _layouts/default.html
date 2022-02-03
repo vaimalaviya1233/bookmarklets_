@@ -30,7 +30,7 @@
         <section class="bookmarklet">
           <h3><a name="allow-copy-paste" class="name">Allow copy paste</a></h3>
           <h4>Description</h4>
-          <p>This bookmarklet reenables copy/paste on an element (typically a text field or text area). To use the bookmarklet, simply click inside the element that you want to select it and then click on the bookmarklet.</p>
+          <p>This bookmarklet reenables copy/paste on all elements in the page (typically a text field or text area).</p>
           <h4>Bookmarklet</h4>
           <p>Drag and drop or bookmark this link: <a href="javascript:(function()%7Breturn%3B%7D)()" class="url">Bookmarklet</a></p>
           <h4>Source code</h4>
@@ -52,9 +52,21 @@
         <hr/>
         
         <section class="bookmarklet">
+          <h3><a name="enable-all" class="name">Enable all</a></h3>
+          <h4>Description</h4>
+          <p>This bookmarklet reenables every element that is disabled in the page (button, text field, etc.).</p>
+          <h4>Bookmarklet</h4>
+          <p>Drag and drop or bookmark this link: <a href="javascript:(function()%7Breturn%3B%7D)()" class="url">Bookmarklet</a></p>
+          <h4>Source code</h4>
+          <pre class="code">return;</pre>
+        </section>
+        
+        <hr/>
+        
+        <section class="bookmarklet">
           <h3><a name="allow-save-password" class="name">Allow save password</a></h3>
           <h4>Description</h4>
-          <p>This bookmarklet reenables the saving of a password by your browser's password manager. To use the bookmarklet, simply click inside the password field that you want to be able to save, then click on the bookmarklet, then enter your password and login. Your browser should then offer to remember the password.</p>
+          <p>This bookmarklet reenables the saving of a password by your browser's password manager.</p>
           <blockquote>
             <p>Note: use with caution. Password managers are great but then need to be protected with an very secure (i.e. long, random and unique) master password.</p>
           </blockquote>
